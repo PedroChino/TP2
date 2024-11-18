@@ -1,0 +1,14 @@
+git add . 
+
+git commit -m "comengtario pertinente"
+
+git push (se der erro, copiar o comando)
+
+git pull
+
+git checkout nomedabranch (mudar branch)
+git checkout -b nomedabranch (criar branch)
+git branch -D nomebranch
+
+git push
+
