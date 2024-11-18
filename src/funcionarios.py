@@ -11,3 +11,18 @@ nome_ficheiro_lista_de_funcionarios = "lista_de_funcionarios.pk"
 # estes comentários
 
 # ...
+
+def imprime_lista_de_funcionarios(lista_de_funcionarios):
+    """TODO: documentação"""
+
+    imprime_lista(cabecalho="Lista de Funcionarios", lista=lista_de_funcionarios)
+
+def cria_novo_funcionario():
+    """Pedir os dados de um novo funcionario
+
+    :return: dicionario com o novo funcionario, {"nome": <<nome>>, "nif": <<nif>>, ...}
+    """
+    # TODO: pedir os dados do funcionario e não esquecer de os devolver
+    # ...
+
+    pass
