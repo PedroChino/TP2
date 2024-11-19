@@ -23,3 +23,17 @@ def listar_leitores():
             print(f"ID: {leitor[0]}, Nome: {leitor[1]}, Contato: {leitor[2]}")
     else:
         print("Nenhum leitor encontrado.")
+
+def atualizar_leitor():
+    listar_leitores()
+    leitor_id = int(input("ID do leitor a ser atualizado: "))
+    novo_nome = input("Novo nome: ")
+    novo_contato = input("Novo contato: ")
+    
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute("UPDATE leitores SET nome = ?, contato = ? WHERE id = ?", 
+                   (novo_nome, novo_contato, leitor_id))
+    conexao.commit()
+    conexao.close()
+    print("Leitor atualizado com sucesso!")
