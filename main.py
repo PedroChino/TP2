@@ -29,7 +29,29 @@ def menu():
         else:
             print("Opção inválida.")
 
-
+def gerenciar_leitores():
+    while True:
+        print("\n--- Gerenciar Leitores ---")
+        print("1. Adicionar Leitor")
+        print("2. Listar Leitores")
+        print("3. Atualizar Leitor")
+        print("4. Excluir Leitor")
+        print("5. Voltar")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            leitores.adicionar_leito()
+        elif opcao == "2":
+            leitores.listar_leitore()
+        elif opcao == "3":
+            leitores.atualizar_leito()
+        elif opcao == "4":
+            leitores.excluir_leito()
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida.")
 
 if __name__ == "__main__":
     db_connection.inicializar_bd()
