@@ -37,3 +37,14 @@ def atualizar_leitor():
     conexao.commit()
     conexao.close()
     print("Leitor atualizado com sucesso!")
+
+def excluir_leitor():
+    listar_leitores()
+    leitor_id = int(input("ID do leitor a ser excluído: "))
+    
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute("DELETE FROM leitores WHERE id = ?", (leitor_id,))
+    conexao.commit()
+    conexao.close()
+    print("Leitor excluído com sucesso!"
