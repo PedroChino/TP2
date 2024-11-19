@@ -47,4 +47,4 @@ def excluir_leitor():
     cursor.execute("DELETE FROM leitores WHERE id = ?", (leitor_id,))
     conexao.commit()
     conexao.close()
-    print("Leitor excluído com sucesso!"
+    print("Leitor excluído com sucesso!")
