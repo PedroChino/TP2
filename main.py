@@ -41,13 +41,13 @@ def gerenciar_leitores():
         opcao = input("Escolha uma opção: ")
         
         if opcao == "1":
-            leitores.adicionar_leito()
+            leitores.adicionar_leitor()
         elif opcao == "2":
-            leitores.listar_leitore()
+            leitores.listar_leitorer()
         elif opcao == "3":
-            leitores.atualizar_leito()
+            leitores.atualizar_leitor()
         elif opcao == "4":
-            leitores.excluir_leito()
+            leitores.excluir_leitor()
         elif opcao == "5":
             break
         else:
