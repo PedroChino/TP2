@@ -48,3 +48,4 @@ def excluir_leitor():
     conexao.commit()
     conexao.close()
     print("Leitor excluído com sucesso!")
+

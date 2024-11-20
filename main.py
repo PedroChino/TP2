@@ -53,6 +53,30 @@ def gerenciar_leitores():
         else:
             print("Opção inválida.")
 
+def gerenciar_livros():
+    while True:
+        print("\n--- Gerenciar Livros ---")
+        print("1. Adicionar Livro")
+        print("2. Listar Livros")
+        print("3. Atualizar Livro")
+        print("4. Excluir Livro")
+        print("5. Voltar")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            livros.adicionar_livro()
+        elif opcao == "2":
+            livros.listar_livros()
+        elif opcao == "3":
+            livros.atualizar_livro()
+        elif opcao == "4":
+            livros.excluir_livro()
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida.")
+
 if __name__ == "__main__":
     db_connection.inicializar_bd()
     menu()
