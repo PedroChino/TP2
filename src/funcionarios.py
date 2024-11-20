@@ -37,3 +37,14 @@ def atualizar_funcionario():
     conexao.commit()
     conexao.close()
     print("Funcionário atualizado com sucesso!")
+
+def excluir_funcionario():
+    listar_funcionarios()
+    funcionario = int(input("ID do funcionário a ser excluído: "))
+    
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario,))
+    conexao.commit()
+    conexao.close()
+    print("Funcionário excluído com sucesso!")
