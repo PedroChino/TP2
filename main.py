@@ -101,6 +101,30 @@ def gerenciar_funcionarios():
         else:
             print("Opção inválida.")
 
+def gerenciar_emprestimos():
+    while True:
+        print("\n--- Gerenciar Empréstimos ---")
+        print("1. Registrar Empréstimo")
+        print("2. Listar Empréstimos")
+        print("3. Atualizar Empréstimo")
+        print("4. Excluir Empréstimo")
+        print("5. Voltar")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            emprestimos.registrar_emprestimo()
+        elif opcao == "2":
+            emprestimos.listar_emprestimos()
+        elif opcao == "3":
+            emprestimos.atualizar_emprestimo()
+        elif opcao == "4":
+            emprestimos.excluir_emprestimo()
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida.")
+
 if __name__ == "__main__":
     db_connection.inicializar_bd()
     menu()
