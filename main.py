@@ -77,6 +77,30 @@ def gerenciar_livros():
         else:
             print("Opção inválida.")
 
+def gerenciar_funcionarios():
+    while True:
+        print("\n--- Gerenciar Funcionários ---")
+        print("1. Adicionar Funcionário")
+        print("2. Listar Funcionários")
+        print("3. Atualizar Funcionário")
+        print("4. Excluir Funcionário")
+        print("5. Voltar")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            funcionarios.adicionar_funcionario()
+        elif opcao == "2":
+            funcionarios.listar_funcionarios()
+        elif opcao == "3":
+            funcionarios.atualizar_funcionario()
+        elif opcao == "4":
+            funcionarios.excluir_funcionario()
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida.")
+
 if __name__ == "__main__":
     db_connection.inicializar_bd()
     menu()
