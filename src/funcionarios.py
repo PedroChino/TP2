@@ -40,11 +40,11 @@ def atualizar_funcionario():
 
 def excluir_funcionario():
     listar_funcionarios()
-    funcionario = int(input("ID do funcionário a ser excluído: "))
+    funcionario_id = int(input("ID do funcionário a ser excluído: "))
     
     conexao = get_connection()
     cursor = conexao.cursor()
-    cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario,))
+    cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario_id,))
     conexao.commit()
     conexao.close()
     print("Funcionário excluído com sucesso!")
