@@ -19,7 +19,7 @@ def listar_funcionarios():
     conexao.close()
     
     if funcionarios:
-        for funcionario in funcionario:
+        for funcionario in funcionarios:
             print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Cargo: {funcionario[2]}")
     else:
         print("Nenhum funcionário encontrado.")
