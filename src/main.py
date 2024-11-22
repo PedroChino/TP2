@@ -46,6 +46,21 @@ def menu():
             print("Opção inválida.")
 
 def gerenciar_leitores():
+    """
+    Exibe o submenu para gerenciamento de leitores.
+
+    Permite adicionar, listar, atualizar ou excluir leitores, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Leitor
+        2. Listar Leitores
+        3. Atualizar Leitor
+        4. Excluir Leitor
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Leitores ---")
         print("1. Adicionar Leitor")
@@ -59,7 +74,7 @@ def gerenciar_leitores():
         if opcao == "1":
             leitores.adicionar_leitor()
         elif opcao == "2":
-            leitores.listar_leitorer()
+            leitores.listar_leitores()
         elif opcao == "3":
             leitores.atualizar_leitor()
         elif opcao == "4":
@@ -68,6 +83,7 @@ def gerenciar_leitores():
             break
         else:
             print("Opção inválida.")
+
 
 def gerenciar_livros():
     while True:
