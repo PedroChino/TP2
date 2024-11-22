@@ -59,17 +59,63 @@ Leitor adicionado com sucesso!</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="leitores.atualizar_leitor">
 <span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">atualizar_leitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#atualizar_leitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.atualizar_leitor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Atualiza as informações de um leitor no banco de dados.</p>
+<p>Solicita ao usuário o ID do leitor, o novo nome e o novo contato, 
+e atualiza as informações na tabela <cite>leitores</cite>.</p>
+<dl class="simple">
+<dt>Inputs solicitados:</dt><dd><ul class="simple">
+<li><p>ID do leitor (int): Identificador único do leitor.</p></li>
+<li><p>Novo nome (str): Nome atualizado do leitor.</p></li>
+<li><p>Novo contato (str): Contato atualizado do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID do leitor a ser atualizado: 1
+Novo nome: João Pedro Silva
+Novo contato: <a class="reference external" href="mailto:joao&#46;pedro&#37;&#52;&#48;email&#46;com">joao<span>&#46;</span>pedro<span>&#64;</span>email<span>&#46;</span>com</a>
+Leitor atualizado com sucesso!</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="leitores.excluir_leitor">
 <span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">excluir_leitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#excluir_leitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.excluir_leitor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Exclui um leitor do banco de dados.</p>
+<p>Solicita ao usuário o ID do leitor e remove o respectivo registro 
+da tabela <cite>leitores</cite>.</p>
+<dl class="simple">
+<dt>Inputs solicitados:</dt><dd><ul class="simple">
+<li><p>ID do leitor (int): Identificador único do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID do leitor a ser excluído: 1
+Leitor excluído com sucesso!</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="leitores.listar_leitores">
 <span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">listar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#listar_leitores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.listar_leitores" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Lista todos os leitores cadastrados no banco de dados.</p>
+<dl class="simple">
+<dt>Recupera os registros da tabela <cite>leitores</cite> e os exibe ao usuário no formato:</dt><dd><ul class="simple">
+<li><p>ID: ID do leitor.</p></li>
+<li><p>Nome: Nome do leitor.</p></li>
+<li><p>Contato: Contato do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou inragir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID: 1, Nome: João Silva, Contato: <a class="reference external" href="mailto:joao&#46;silva&#37;&#52;&#48;email&#46;com">joao<span>&#46;</span>silva<span>&#64;</span>email<span>&#46;</span>com</a>
+ID: 2, Nome: Maria Souza, Contato: <a class="reference external" href="mailto:maria&#46;souza&#37;&#52;&#48;email&#46;com">maria<span>&#46;</span>souza<span>&#64;</span>email<span>&#46;</span>com</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

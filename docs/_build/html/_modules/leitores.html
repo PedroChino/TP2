@@ -69,6 +69,21 @@
 <div class="viewcode-block" id="listar_leitores">
 <a class="viewcode-back" href="../leitores.html#leitores.listar_leitores">[docs]</a>
 <span class="k">def</span> <span class="nf">listar_leitores</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lista todos os leitores cadastrados no banco de dados.</span>
+
+<span class="sd">    Recupera os registros da tabela `leitores` e os exibe ao usuário no formato:</span>
+<span class="sd">        - ID: ID do leitor.</span>
+<span class="sd">        - Nome: Nome do leitor.</span>
+<span class="sd">        - Contato: Contato do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou inragir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID: 1, Nome: João Silva, Contato: joao.silva@email.com</span>
+<span class="sd">        ID: 2, Nome: Maria Souza, Contato: maria.souza@email.com</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
     <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM leitores&quot;</span><span class="p">)</span>
@@ -82,9 +97,30 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nenhum leitor encontrado.&quot;</span><span class="p">)</span></div>
 
 
+
 <div class="viewcode-block" id="atualizar_leitor">
 <a class="viewcode-back" href="../leitores.html#leitores.atualizar_leitor">[docs]</a>
 <span class="k">def</span> <span class="nf">atualizar_leitor</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Atualiza as informações de um leitor no banco de dados.</span>
+
+<span class="sd">    Solicita ao usuário o ID do leitor, o novo nome e o novo contato, </span>
+<span class="sd">    e atualiza as informações na tabela `leitores`.</span>
+
+<span class="sd">    Inputs solicitados:</span>
+<span class="sd">        - ID do leitor (int): Identificador único do leitor.</span>
+<span class="sd">        - Novo nome (str): Nome atualizado do leitor.</span>
+<span class="sd">        - Novo contato (str): Contato atualizado do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID do leitor a ser atualizado: 1</span>
+<span class="sd">        Novo nome: João Pedro Silva</span>
+<span class="sd">        Novo contato: joao.pedro@email.com</span>
+<span class="sd">        Leitor atualizado com sucesso!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">listar_leitores</span><span class="p">()</span>
     <span class="n">leitor_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do leitor a ser atualizado: &quot;</span><span class="p">))</span>
     <span class="n">novo_nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo nome: &quot;</span><span class="p">)</span>
@@ -99,9 +135,26 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Leitor atualizado com sucesso!&quot;</span><span class="p">)</span></div>
 
 
+
 <div class="viewcode-block" id="excluir_leitor">
 <a class="viewcode-back" href="../leitores.html#leitores.excluir_leitor">[docs]</a>
 <span class="k">def</span> <span class="nf">excluir_leitor</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exclui um leitor do banco de dados.</span>
+
+<span class="sd">    Solicita ao usuário o ID do leitor e remove o respectivo registro </span>
+<span class="sd">    da tabela `leitores`.</span>
+
+<span class="sd">    Inputs solicitados:</span>
+<span class="sd">        - ID do leitor (int): Identificador único do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID do leitor a ser excluído: 1</span>
+<span class="sd">        Leitor excluído com sucesso!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">listar_leitores</span><span class="p">()</span>
     <span class="n">leitor_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do leitor a ser excluído: &quot;</span><span class="p">))</span>
     
