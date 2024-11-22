@@ -95,6 +95,22 @@ def atualizar_leitor():
 
 
 def excluir_leitor():
+    """
+    Exclui um leitor do banco de dados.
+
+    Solicita ao usuário o ID do leitor e remove o respectivo registro 
+    da tabela `leitores`.
+
+    Inputs solicitados:
+        - ID do leitor (int): Identificador único do leitor.
+
+    Raises:
+        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        ID do leitor a ser excluído: 1
+        Leitor excluído com sucesso!
+    """
     listar_leitores()
     leitor_id = int(input("ID do leitor a ser excluído: "))
     
