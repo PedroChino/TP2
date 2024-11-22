@@ -125,6 +125,21 @@ def gerenciar_livros():
             print("Opção inválida.")
 
 def gerenciar_funcionarios():
+    """
+    Exibe o submenu para gerenciamento de funcionários.
+
+    Permite adicionar, listar, atualizar ou excluir funcionários, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Funcionário
+        2. Listar Funcionários
+        3. Atualizar Funcionário
+        4. Excluir Funcionário
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Funcionários ---")
         print("1. Adicionar Funcionário")
