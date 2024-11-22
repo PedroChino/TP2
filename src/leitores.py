@@ -60,6 +60,26 @@ def listar_leitores():
 
 
 def atualizar_leitor():
+    """
+    Atualiza as informações de um leitor no banco de dados.
+
+    Solicita ao usuário o ID do leitor, o novo nome e o novo contato, 
+    e atualiza as informações na tabela `leitores`.
+
+    Inputs solicitados:
+        - ID do leitor (int): Identificador único do leitor.
+        - Novo nome (str): Nome atualizado do leitor.
+        - Novo contato (str): Contato atualizado do leitor.
+
+    Raises:
+        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        ID do leitor a ser atualizado: 1
+        Novo nome: João Pedro Silva
+        Novo contato: joao.pedro@email.com
+        Leitor atualizado com sucesso!
+    """
     listar_leitores()
     leitor_id = int(input("ID do leitor a ser atualizado: "))
     novo_nome = input("Novo nome: ")
@@ -72,6 +92,7 @@ def atualizar_leitor():
     conexao.commit()
     conexao.close()
     print("Leitor atualizado com sucesso!")
+
 
 def excluir_leitor():
     listar_leitores()
