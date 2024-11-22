@@ -164,6 +164,21 @@ def gerenciar_funcionarios():
             print("Opção inválida.")
 
 def gerenciar_emprestimos():
+    """
+    Exibe o submenu para gerenciamento de empréstimos.
+
+    Permite registrar, listar, atualizar ou excluir empréstimos, além de retornar ao menu principal.
+
+    Submenu:
+        1. Registrar Empréstimo
+        2. Listar Empréstimos
+        3. Atualizar Empréstimo
+        4. Excluir Empréstimo
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Empréstimos ---")
         print("1. Registrar Empréstimo")
