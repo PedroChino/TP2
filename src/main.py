@@ -1,8 +1,9 @@
-from src import db_connection
-from src import livros
-from src import funcionarios
-from src import leitores
-from src import emprestimos
+import db_connection
+import leitores
+import funcionarios
+import livros
+
+import emprestimos
 
 def menu():
     while True:
