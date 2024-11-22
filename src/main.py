@@ -2,10 +2,25 @@ import db_connection
 import leitores
 import funcionarios
 import livros
-
 import emprestimos
 
 def menu():
+    """
+    Exibe o menu principal do sistema de biblioteca e gerencia a navegação entre opções.
+
+    As opções incluem o gerenciamento de livros, funcionários, leitores e empréstimos.
+    Permite ao usuário sair do programa.
+
+    Menu:
+        1. Gerenciar Livros
+        2. Gerenciar Funcionários
+        3. Gerenciar Leitores
+        4. Gerenciar Empréstimos
+        5. Sair
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n=== Sistema de Biblioteca ===")
         print("1. Gerenciar Livros")
