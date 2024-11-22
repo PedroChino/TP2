@@ -86,6 +86,21 @@ def gerenciar_leitores():
 
 
 def gerenciar_livros():
+    """
+    Exibe o submenu para gerenciamento de livros.
+
+    Permite adicionar, listar, atualizar ou excluir livros, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Livro
+        2. Listar Livros
+        3. Atualizar Livro
+        4. Excluir Livro
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Livros ---")
         print("1. Adicionar Livro")
