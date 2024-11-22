@@ -203,5 +203,12 @@ def gerenciar_emprestimos():
             print("Opção inválida.")
 
 if __name__ == "__main__":
+    """
+    Inicializa o banco de dados e executa o menu principal.
+
+    Calls:
+        - db_connection.inicializar_bd: Inicializa as tabelas do banco de dados, se necessário.
+        - menu: Exibe o menu principal do sistema.
+    """
     db_connection.inicializar_bd()
     menu()
