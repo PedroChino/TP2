@@ -29,7 +29,7 @@ def atualizar_funcionario():
     funcionario_id = int(input("ID do funcionário a ser atualizado: "))
     novo_nome = input("Novo nome: ")
     novo_cargo = input("Novo cargo: ")
-    
+
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?", 
@@ -41,7 +41,7 @@ def atualizar_funcionario():
 def excluir_funcionario():
     listar_funcionarios()
     funcionario_id = int(input("ID do funcionário a ser excluído: "))
-    
+
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario_id,))
