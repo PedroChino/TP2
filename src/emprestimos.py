@@ -98,14 +98,31 @@ def atualizar_emprestimo():
     conexao.commit()
     conexao.close()
     print("Empréstimo atualizado com sucesso!")
+ 
+def excluir_emprestimo():
+    """
+    Permite ao usuário excluir um registro de empréstimo.
 
-    def excluir_emprestimo():
-        listar_emprestimos()
-        emprestimo_id = int(input("ID do empréstimo a ser excluído: "))
-        
-        conexao = get_connection()
-        cursor = conexao.cursor()
-        cursor.execute("DELETE FROM emprestimos WHERE id = ?", (emprestimo_id,))
-        conexao.commit()
-        conexao.close()
-        print("Empréstimo excluído com sucesso!")
+    Passos:
+    1. Exibe todos os empréstimos registrados.
+    2. Solicita o ID do empréstimo a ser excluído.
+    3. Remove o registro correspondente do banco de dados.
+
+    Entradas:
+    - ID do Empréstimo
+
+    Saída:
+    - Mensagem de confirmação ao excluir o empréstimo.
+    """
+    listar_emprestimos()
+    emprestimo_id = int(input("ID do empréstimo a ser excluído: "))
+    
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute(
+        "DELETE FROM emprestimos WHERE id = ?", 
+        (emprestimo_id,)
+    )
+    conexao.commit()
+    conexao.close()
+    print("Empréstimo excluído com sucesso!")
