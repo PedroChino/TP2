@@ -36,3 +36,16 @@ def listar_emprestimos():
                   f"Empréstimo: {emprestimo[3]}, Devolução: {emprestimo[4]}")
     else:
         print("Nenhum empréstimo encontrado.")
+
+def atualizar_emprestimo():
+    listar_emprestimos()
+    emprestimo_id = int(input("ID do empréstimo a ser atualizado: "))
+    nova_data_devolucao = input("Nova data de devolução (YYYY-MM-DD): ")
+    
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute("UPDATE emprestimos SET data_devolucao = ? WHERE id = ?", 
+                   (nova_data_devolucao, emprestimo_id))
+    conexao.commit()
+    conexao.close()
+    print("Empréstimo atualizado com sucesso!")
