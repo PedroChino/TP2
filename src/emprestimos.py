@@ -19,3 +19,20 @@ def registrar_emprestimo():
     conexao.commit()
     conexao.close()
     print("Empréstimo registrado com sucesso!")
+
+def listar_emprestimos():
+    conexao = get_connection()
+    cursor = conexao.cursor()
+    cursor.execute('''SELECT e.id, l.titulo, le.nome, e.data_emprestimo, e.data_devolucao
+                      FROM emprestimos e
+                      JOIN livros l ON e.livro_id = l.id
+                      JOIN leitores le ON e.leitor_id = le.id''')
+    emprestimos = cursor.fetchall()
+    conexao.close()
+    
+    if emprestimos:
+        for emprestimo in emprestimos:
+            print(f"ID: {emprestimo[0]}, Livro: {emprestimo[1]}, Leitor: {emprestimo[2]}, "
+                  f"Empréstimo: {emprestimo[3]}, Devolução: {emprestimo[4]}")
+    else:
+        print("Nenhum empréstimo encontrado.")
