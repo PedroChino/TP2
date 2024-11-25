@@ -3,6 +3,25 @@ from src.livros import listar_livros
 from src.leitores import listar_leitores
 
 def registrar_emprestimo():
+    """
+    Lista os livros e leitores disponíveis, solicita informações do usuário e registra
+    um novo empréstimo na tabela 'emprestimos' do banco de dados.
+
+    Passos:
+    1. Exibe a lista de livros disponíveis e solicita o ID do livro para empréstimo.
+    2. Exibe a lista de leitores registrados e solicita o ID do leitor.
+    3. Solicita a data do empréstimo e, opcionalmente, a data de devolução.
+    4. Registra o empréstimo no banco de dados.
+
+    Entradas:
+    - ID do Livro
+    - ID do Leitor
+    - Data de Empréstimo (formato: YYYY-MM-DD)
+    - Data de Devolução (opcional)
+
+    Saída:
+    - Mensagem de confirmação ao registrar o empréstimo.
+    """
     listar_livros()
     livro_id = int(input("ID do livro para empréstimo: "))
     
@@ -14,12 +33,14 @@ def registrar_emprestimo():
     
     conexao = get_connection()
     cursor = conexao.cursor()
-    cursor.execute("INSERT INTO emprestimos (livro_id, leitor_id, data_emprestimo, data_devolucao) VALUES (?, ?, ?, ?)", 
-                   (livro_id, leitor_id, data_emprestimo, data_devolucao))
+    cursor.execute(
+        "INSERT INTO emprestimos (livro_id, leitor_id, data_emprestimo, data_devolucao) VALUES (?, ?, ?, ?)", 
+        (livro_id, leitor_id, data_emprestimo, data_devolucao)
+    )
     conexao.commit()
     conexao.close()
     print("Empréstimo registrado com sucesso!")
-
+    
 def listar_emprestimos():
     conexao = get_connection()
     cursor = conexao.cursor()
@@ -60,4 +81,3 @@ def atualizar_emprestimo():
         conexao.commit()
         conexao.close()
         print("Empréstimo excluído com sucesso!")
-
