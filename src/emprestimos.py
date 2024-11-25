@@ -51,13 +51,13 @@ def atualizar_emprestimo():
     print("Empréstimo atualizado com sucesso!")
 
     def excluir_emprestimo():
-    listar_emprestimos()
-    emprestimo_id = int(input("ID do empréstimo a ser excluído: "))
-    
-    conexao = get_connection()
-    cursor = conexao.cursor()
-    cursor.execute("DELETE FROM emprestimos WHERE id = ?", (emprestimo_id,))
-    conexao.commit()
-    conexao.close()
-    print("Empréstimo excluído com sucesso!")
+        listar_emprestimos()
+        emprestimo_id = int(input("ID do empréstimo a ser excluído: "))
+        
+        conexao = get_connection()
+        cursor = conexao.cursor()
+        cursor.execute("DELETE FROM emprestimos WHERE id = ?", (emprestimo_id,))
+        conexao.commit()
+        conexao.close()
+        print("Empréstimo excluído com sucesso!")
 
