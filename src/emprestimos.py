@@ -40,14 +40,24 @@ def registrar_emprestimo():
     conexao.commit()
     conexao.close()
     print("Empréstimo registrado com sucesso!")
-    
+
 def listar_emprestimos():
+    """
+    Recupera e exibe todos os empréstimos registrados na tabela 'emprestimos',
+    incluindo informações do livro, do leitor e das datas envolvidas.
+
+    Saída:
+    - Lista detalhada de empréstimos com ID, Livro, Leitor, Data de Empréstimo e Data de Devolução.
+    - Mensagem indicando ausência de registros, caso nenhum empréstimo seja encontrado.
+    """
     conexao = get_connection()
     cursor = conexao.cursor()
-    cursor.execute('''SELECT e.id, l.titulo, le.nome, e.data_emprestimo, e.data_devolucao
-                      FROM emprestimos e
-                      JOIN livros l ON e.livro_id = l.id
-                      JOIN leitores le ON e.leitor_id = le.id''')
+    cursor.execute('''
+        SELECT e.id, l.titulo, le.nome, e.data_emprestimo, e.data_devolucao
+        FROM emprestimos e
+        JOIN livros l ON e.livro_id = l.id
+        JOIN leitores le ON e.leitor_id = le.id
+    ''')
     emprestimos = cursor.fetchall()
     conexao.close()
     
@@ -57,7 +67,7 @@ def listar_emprestimos():
                   f"Empréstimo: {emprestimo[3]}, Devolução: {emprestimo[4]}")
     else:
         print("Nenhum empréstimo encontrado.")
-
+        
 def atualizar_emprestimo():
     listar_emprestimos()
     emprestimo_id = int(input("ID do empréstimo a ser atualizado: "))
