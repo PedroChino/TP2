@@ -1,6 +1,24 @@
-from src.db_connection import get_connection
+from db_connection import get_connection
 
 def adicionar_funcionario():
+    """
+    Adiciona um novo funcionário ao banco de dados.
+
+    Solicita ao usuário o nome e o cargo do funcionário e insere os dados
+    na tabela `funcionarios` do banco de dados.
+
+    Inputs:
+        - Nome (str): Nome do funcionário.
+        - Cargo (str): Cargo do funcionário.
+
+    Raises:
+        Exception: Caso ocorra algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        Nome: Ana Souza
+        Cargo: Gerente
+        Funcionário adicionado com sucesso!
+    """
     nome = input("Nome: ")
     cargo = input("Cargo: ")
     
@@ -29,7 +47,7 @@ def atualizar_funcionario():
     funcionario_id = int(input("ID do funcionário a ser atualizado: "))
     novo_nome = input("Novo nome: ")
     novo_cargo = input("Novo cargo: ")
-
+    
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?", 
@@ -41,7 +59,7 @@ def atualizar_funcionario():
 def excluir_funcionario():
     listar_funcionarios()
     funcionario_id = int(input("ID do funcionário a ser excluído: "))
-
+    
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario_id,))
