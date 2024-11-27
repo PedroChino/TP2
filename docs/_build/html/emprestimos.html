@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>emprestimos module &#8212; src  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/scrolls.css?v=6d7452d6" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="funcionarios module" href="funcionarios.html" />
+    <link rel="prev" title="db_connection module" href="db_connection.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="index.html"
+          title="back to the documentation overview"><span>emprestimos module</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="Related">
+        <a href="db_connection.html">&laquo; db_connection module</a> |
+        <a href="#">emprestimos module</a>
+        | <a href="funcionarios.html">funcionarios module &raquo;</a>
+      </div>
+      <div id="contentwrapper">
+        <div id="toc" role="navigation" aria-label="Table of contents">
+          <h3>Table of Contents</h3>
+          <ul>
+<li><a class="reference internal" href="#">emprestimos module</a><ul>
+<li><a class="reference internal" href="#emprestimos.atualizar_emprestimo"><code class="docutils literal notranslate"><span class="pre">atualizar_emprestimo()</span></code></a></li>
+<li><a class="reference internal" href="#emprestimos.excluir_emprestimo"><code class="docutils literal notranslate"><span class="pre">excluir_emprestimo()</span></code></a></li>
+<li><a class="reference internal" href="#emprestimos.listar_emprestimos"><code class="docutils literal notranslate"><span class="pre">listar_emprestimos()</span></code></a></li>
+<li><a class="reference internal" href="#emprestimos.registrar_emprestimo"><code class="docutils literal notranslate"><span class="pre">registrar_emprestimo()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <div role="main">
+        
+  <section id="module-emprestimos">
+<span id="emprestimos-module"></span><h1>emprestimos module<a class="headerlink" href="#module-emprestimos" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="emprestimos.atualizar_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">emprestimos.</span></span><span class="sig-name descname"><span class="pre">atualizar_emprestimo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emprestimos.html#atualizar_emprestimo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emprestimos.atualizar_emprestimo" title="Link to this definition">¶</a></dt>
+<dd><p>Permite ao usuário atualizar a data de devolução de um empréstimo existente.</p>
+<p>Passos:
+1. Exibe todos os empréstimos registrados.
+2. Solicita o ID do empréstimo a ser atualizado.
+3. Solicita a nova data de devolução.
+4. Atualiza o registro no banco de dados.</p>
+<p>Entradas:
+- ID do Empréstimo
+- Nova Data de Devolução (formato: YYYY-MM-DD)</p>
+<p>Saída:
+- Mensagem de confirmação ao atualizar o empréstimo.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="emprestimos.excluir_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">emprestimos.</span></span><span class="sig-name descname"><span class="pre">excluir_emprestimo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emprestimos.html#excluir_emprestimo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emprestimos.excluir_emprestimo" title="Link to this definition">¶</a></dt>
+<dd><p>Permite ao usuário excluir um registro de empréstimo.</p>
+<p>Passos:
+1. Exibe todos os empréstimos registrados.
+2. Solicita o ID do empréstimo a ser excluído.
+3. Remove o registro correspondente do banco de dados.</p>
+<p>Entradas:
+- ID do Empréstimo</p>
+<p>Saída:
+- Mensagem de confirmação ao excluir o empréstimo.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="emprestimos.listar_emprestimos">
+<span class="sig-prename descclassname"><span class="pre">emprestimos.</span></span><span class="sig-name descname"><span class="pre">listar_emprestimos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emprestimos.html#listar_emprestimos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emprestimos.listar_emprestimos" title="Link to this definition">¶</a></dt>
+<dd><p>Recupera e exibe todos os empréstimos registrados na tabela ‘emprestimos’,
+incluindo informações do livro, do leitor e das datas envolvidas.</p>
+<p>Saída:
+- Lista detalhada de empréstimos com ID, Livro, Leitor, Data de Empréstimo e Data de Devolução.
+- Mensagem indicando ausência de registros, caso nenhum empréstimo seja encontrado.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="emprestimos.registrar_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">emprestimos.</span></span><span class="sig-name descname"><span class="pre">registrar_emprestimo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emprestimos.html#registrar_emprestimo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emprestimos.registrar_emprestimo" title="Link to this definition">¶</a></dt>
+<dd><p>Lista os livros e leitores disponíveis, solicita informações do usuário e registra
+um novo empréstimo na tabela ‘emprestimos’ do banco de dados.</p>
+<p>Passos:
+1. Exibe a lista de livros disponíveis e solicita o ID do livro para empréstimo.
+2. Exibe a lista de leitores registrados e solicita o ID do leitor.
+3. Solicita a data do empréstimo e, opcionalmente, a data de devolução.
+4. Registra o empréstimo no banco de dados.</p>
+<p>Entradas:
+- ID do Livro
+- ID do Leitor
+- Data de Empréstimo (formato: YYYY-MM-DD)
+- Data de Devolução (opcional)</p>
+<p>Saída:
+- Mensagem de confirmação ao registrar o empréstimo.</p>
+</dd></dl>
+
+</section>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Author.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

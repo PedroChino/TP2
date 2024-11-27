@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>livros module &#8212; src  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/scrolls.css?v=6d7452d6" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="leitores module" href="leitores.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="index.html"
+          title="back to the documentation overview"><span>livros module</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="Related">
+        <a href="leitores.html">&laquo; leitores module</a> |
+        <a href="#">livros module</a>
+        | <a href="main.html">main module &raquo;</a>
+      </div>
+      <div id="contentwrapper">
+        <div id="toc" role="navigation" aria-label="Table of contents">
+          <h3>Table of Contents</h3>
+          <ul>
+<li><a class="reference internal" href="#">livros module</a><ul>
+<li><a class="reference internal" href="#livros.adicionar_livro"><code class="docutils literal notranslate"><span class="pre">adicionar_livro()</span></code></a></li>
+<li><a class="reference internal" href="#livros.atualizar_livro"><code class="docutils literal notranslate"><span class="pre">atualizar_livro()</span></code></a></li>
+<li><a class="reference internal" href="#livros.excluir_livro"><code class="docutils literal notranslate"><span class="pre">excluir_livro()</span></code></a></li>
+<li><a class="reference internal" href="#livros.listar_livros"><code class="docutils literal notranslate"><span class="pre">listar_livros()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <div role="main">
+        
+  <section id="module-livros">
+<span id="livros-module"></span><h1>livros module<a class="headerlink" href="#module-livros" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="livros.adicionar_livro">
+<span class="sig-prename descclassname"><span class="pre">livros.</span></span><span class="sig-name descname"><span class="pre">adicionar_livro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/livros.html#adicionar_livro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#livros.adicionar_livro" title="Link to this definition">¶</a></dt>
+<dd><p>Adiciona um novo livro ao banco de dados.</p>
+<dl class="simple">
+<dt>Funcionalidade:</dt><dd><ul class="simple">
+<li><p>Solicita ao usuário informações do livro (Título, Autor, Ano).</p></li>
+<li><p>Insere os dados no banco de dados.</p></li>
+</ul>
+</dd>
+<dt>Entrada:</dt><dd><ul class="simple">
+<li><p>Título: Nome do livro (string).</p></li>
+<li><p>Autor: Nome do autor do livro (string).</p></li>
+<li><p>Ano: Ano de publicação do livro (inteiro).</p></li>
+</ul>
+</dd>
+<dt>Processo:</dt><dd><ul class="simple">
+<li><p>Estabelece conexão com o banco de dados.</p></li>
+<li><p>Executa a query SQL <cite>INSERT</cite> para adicionar os dados.</p></li>
+<li><p>Fecha a conexão com o banco de dados.</p></li>
+</ul>
+</dd>
+<dt>Saída:</dt><dd><ul class="simple">
+<li><p>Mensagem de confirmação: “Livro adicionado com sucesso!”</p></li>
+</ul>
+</dd>
+<dt>Exceções:</dt><dd><ul class="simple">
+<li><p>Gera erro caso não consiga se conectar ao banco de dados.</p></li>
+<li><p>Gera erro caso as entradas sejam inválidas.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="livros.atualizar_livro">
+<span class="sig-prename descclassname"><span class="pre">livros.</span></span><span class="sig-name descname"><span class="pre">atualizar_livro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/livros.html#atualizar_livro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#livros.atualizar_livro" title="Link to this definition">¶</a></dt>
+<dd><p>Atualiza as informações de um livro existente no banco de dados.</p>
+<dl class="simple">
+<dt>Funcionalidade:</dt><dd><ul class="simple">
+<li><p>Solicita ao usuário o ID do livro a ser atualizado.</p></li>
+<li><p>Permite modificar Título, Autor e Ano do livro.</p></li>
+</ul>
+</dd>
+<dt>Entrada:</dt><dd><ul class="simple">
+<li><p>ID do Livro: Identificador único do livro (inteiro).</p></li>
+<li><p>Novo Título: Novo nome do livro (string).</p></li>
+<li><p>Novo Autor: Novo nome do autor (string).</p></li>
+<li><p>Novo Ano: Novo ano de publicação (inteiro).</p></li>
+</ul>
+</dd>
+<dt>Processo:</dt><dd><ul class="simple">
+<li><p>Lista todos os livros para referência.</p></li>
+<li><p>Solicita os novos dados.</p></li>
+<li><p>Executa a query SQL <cite>UPDATE</cite> para modificar os registros.</p></li>
+<li><p>Fecha a conexão com o banco de dados.</p></li>
+</ul>
+</dd>
+<dt>Saída:</dt><dd><ul class="simple">
+<li><p>Mensagem de confirmação: “Livro atualizado com sucesso!”</p></li>
+</ul>
+</dd>
+<dt>Exceções:</dt><dd><ul class="simple">
+<li><p>Gera erro caso o ID não exista no banco de dados.</p></li>
+<li><p>Gera erro caso a tabela <cite>livros</cite> não contenha o registro solicitado.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="livros.excluir_livro">
+<span class="sig-prename descclassname"><span class="pre">livros.</span></span><span class="sig-name descname"><span class="pre">excluir_livro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/livros.html#excluir_livro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#livros.excluir_livro" title="Link to this definition">¶</a></dt>
+<dd><p>Exclui um livro do banco de dados com base no ID fornecido.</p>
+<dl class="simple">
+<dt>Funcionalidade:</dt><dd><ul class="simple">
+<li><p>Solicita ao usuário o ID do livro que deseja excluir.</p></li>
+<li><p>Remove o registro correspondente da tabela <cite>livros</cite>.</p></li>
+</ul>
+</dd>
+<dt>Entrada:</dt><dd><ul class="simple">
+<li><p>ID do Livro: Identificador único do livro (inteiro).</p></li>
+</ul>
+</dd>
+<dt>Processo:</dt><dd><ul class="simple">
+<li><p>Lista todos os livros para referência.</p></li>
+<li><p>Solicita o ID do livro a ser excluído.</p></li>
+<li><p>Executa a query SQL <cite>DELETE</cite> para remover o registro.</p></li>
+<li><p>Fecha a conexão com o banco de dados.</p></li>
+</ul>
+</dd>
+<dt>Saída:</dt><dd><ul class="simple">
+<li><p>Mensagem de confirmação: “Livro excluído com sucesso!”</p></li>
+</ul>
+</dd>
+<dt>Exceções:</dt><dd><ul class="simple">
+<li><p>Gera erro caso o ID fornecido não exista no banco de dados.</p></li>
+<li><p>Gera erro caso a tabela <cite>livros</cite> esteja vazia ou não exista.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="livros.listar_livros">
+<span class="sig-prename descclassname"><span class="pre">livros.</span></span><span class="sig-name descname"><span class="pre">listar_livros</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/livros.html#listar_livros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#livros.listar_livros" title="Link to this definition">¶</a></dt>
+<dd><p>Lista todos os livros cadastrados no banco de dados.</p>
+<dl class="simple">
+<dt>Funcionalidade:</dt><dd><ul class="simple">
+<li><p>Conecta ao banco de dados.</p></li>
+<li><p>Recupera todos os registros da tabela <cite>livros</cite>.</p></li>
+</ul>
+</dd>
+<dt>Processo:</dt><dd><ul class="simple">
+<li><p>Executa a query SQL <cite>SELECT * FROM livros</cite>.</p></li>
+<li><dl class="simple">
+<dt>Itera pelos resultados e exibe os detalhes de cada livro:</dt><dd><ul>
+<li><p>ID</p></li>
+<li><p>Título</p></li>
+<li><p>Autor</p></li>
+<li><p>Ano</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Fecha a conexão com o banco de dados.</p></li>
+</ul>
+</dd>
+<dt>Saída:</dt><dd><ul class="simple">
+<li><p>Lista de livros formatada.</p></li>
+<li><p>Mensagem “Nenhum livro encontrado.” caso não existam registros.</p></li>
+</ul>
+</dd>
+<dt>Exceções:</dt><dd><ul class="simple">
+<li><p>Gera erro caso não consiga se conectar ao banco de dados.</p></li>
+<li><p>Gera erro caso a tabela <cite>livros</cite> não exista ou esteja vazia.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Author.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>leitores &#8212; src  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/scrolls.css?v=6d7452d6" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="../index.html"
+          title="back to the documentation overview"><span>leitores</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="Related">
+        <a href="#">leitores</a>
+      </div>
+      <div id="contentwrapper">
+        <div role="main">
+        
+  <h1>Source code for leitores</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">db_connection</span> <span class="kn">import</span> <span class="n">get_connection</span>
+
+<div class="viewcode-block" id="adicionar_leitor">
+<a class="viewcode-back" href="../leitores.html#leitores.adicionar_leitor">[docs]</a>
+<span class="k">def</span> <span class="nf">adicionar_leitor</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adiciona um novo leitor ao banco de dados.</span>
+
+<span class="sd">    Solicita ao usuário o nome e o contato do leitor e insere os dados</span>
+<span class="sd">    na tabela `leitores` do banco de dados.</span>
+
+<span class="sd">    Inputs solicitados:</span>
+<span class="sd">        - Nome (str): Nome do leitor.</span>
+<span class="sd">        - Contato (str): E-mail ou telefone do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        Nome: João Silva</span>
+<span class="sd">        Contato: joao.silva@email.com</span>
+<span class="sd">        Leitor adicionado com sucesso!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nome: &quot;</span><span class="p">)</span>
+    <span class="n">contato</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Contato (e-mail/telefone): &quot;</span><span class="p">)</span>
+    
+    <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO leitores (nome, contato) VALUES (?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">contato</span><span class="p">))</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Leitor adicionado com sucesso!&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="listar_leitores">
+<a class="viewcode-back" href="../leitores.html#leitores.listar_leitores">[docs]</a>
+<span class="k">def</span> <span class="nf">listar_leitores</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lista todos os leitores cadastrados no banco de dados.</span>
+
+<span class="sd">    Recupera os registros da tabela `leitores` e os exibe ao usuário no formato:</span>
+<span class="sd">        - ID: ID do leitor.</span>
+<span class="sd">        - Nome: Nome do leitor.</span>
+<span class="sd">        - Contato: Contato do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou inragir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID: 1, Nome: João Silva, Contato: joao.silva@email.com</span>
+<span class="sd">        ID: 2, Nome: Maria Souza, Contato: maria.souza@email.com</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM leitores&quot;</span><span class="p">)</span>
+    <span class="n">leitores</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">leitores</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">leitor</span> <span class="ow">in</span> <span class="n">leitores</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ID: </span><span class="si">{</span><span class="n">leitor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Nome: </span><span class="si">{</span><span class="n">leitor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, Contato: </span><span class="si">{</span><span class="n">leitor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nenhum leitor encontrado.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="atualizar_leitor">
+<a class="viewcode-back" href="../leitores.html#leitores.atualizar_leitor">[docs]</a>
+<span class="k">def</span> <span class="nf">atualizar_leitor</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Atualiza as informações de um leitor no banco de dados.</span>
+
+<span class="sd">    Solicita ao usuário o ID do leitor, o novo nome e o novo contato, </span>
+<span class="sd">    e atualiza as informações na tabela `leitores`.</span>
+
+<span class="sd">    Inputs solicitados:</span>
+<span class="sd">        - ID do leitor (int): Identificador único do leitor.</span>
+<span class="sd">        - Novo nome (str): Nome atualizado do leitor.</span>
+<span class="sd">        - Novo contato (str): Contato atualizado do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID do leitor a ser atualizado: 1</span>
+<span class="sd">        Novo nome: João Pedro Silva</span>
+<span class="sd">        Novo contato: joao.pedro@email.com</span>
+<span class="sd">        Leitor atualizado com sucesso!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">listar_leitores</span><span class="p">()</span>
+    <span class="n">leitor_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do leitor a ser atualizado: &quot;</span><span class="p">))</span>
+    <span class="n">novo_nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo nome: &quot;</span><span class="p">)</span>
+    <span class="n">novo_contato</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo contato: &quot;</span><span class="p">)</span>
+    
+    <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE leitores SET nome = ?, contato = ? WHERE id = ?&quot;</span><span class="p">,</span> 
+                   <span class="p">(</span><span class="n">novo_nome</span><span class="p">,</span> <span class="n">novo_contato</span><span class="p">,</span> <span class="n">leitor_id</span><span class="p">))</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Leitor atualizado com sucesso!&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="excluir_leitor">
+<a class="viewcode-back" href="../leitores.html#leitores.excluir_leitor">[docs]</a>
+<span class="k">def</span> <span class="nf">excluir_leitor</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exclui um leitor do banco de dados.</span>
+
+<span class="sd">    Solicita ao usuário o ID do leitor e remove o respectivo registro </span>
+<span class="sd">    da tabela `leitores`.</span>
+
+<span class="sd">    Inputs solicitados:</span>
+<span class="sd">        - ID do leitor (int): Identificador único do leitor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        ID do leitor a ser excluído: 1</span>
+<span class="sd">        Leitor excluído com sucesso!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">listar_leitores</span><span class="p">()</span>
+    <span class="n">leitor_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do leitor a ser excluído: &quot;</span><span class="p">))</span>
+    
+    <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DELETE FROM leitores WHERE id = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">leitor_id</span><span class="p">,))</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conexao</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Leitor excluído com sucesso!&quot;</span><span class="p">)</span></div>
+
+
+</pre></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Author.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

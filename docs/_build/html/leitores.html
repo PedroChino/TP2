@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>leitores module &#8212; src  documentation</title>
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/scrolls.css?v=6d7452d6" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="livros module" href="livros.html" />
+    <link rel="prev" title="funcionarios module" href="funcionarios.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="index.html"
+          title="back to the documentation overview"><span>leitores module</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="Related">
+        <a href="funcionarios.html">&laquo; funcionarios module</a> |
+        <a href="#">leitores module</a>
+        | <a href="livros.html">livros module &raquo;</a>
+      </div>
+      <div id="contentwrapper">
+        <div id="toc" role="navigation" aria-label="Table of contents">
+          <h3>Table of Contents</h3>
+          <ul>
+<li><a class="reference internal" href="#">leitores module</a><ul>
+<li><a class="reference internal" href="#leitores.adicionar_leitor"><code class="docutils literal notranslate"><span class="pre">adicionar_leitor()</span></code></a></li>
+<li><a class="reference internal" href="#leitores.atualizar_leitor"><code class="docutils literal notranslate"><span class="pre">atualizar_leitor()</span></code></a></li>
+<li><a class="reference internal" href="#leitores.excluir_leitor"><code class="docutils literal notranslate"><span class="pre">excluir_leitor()</span></code></a></li>
+<li><a class="reference internal" href="#leitores.listar_leitores"><code class="docutils literal notranslate"><span class="pre">listar_leitores()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <div role="main">
+        
+  <section id="module-leitores">
+<span id="leitores-module"></span><h1>leitores module<a class="headerlink" href="#module-leitores" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="leitores.adicionar_leitor">
+<span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">adicionar_leitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#adicionar_leitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.adicionar_leitor" title="Link to this definition">¶</a></dt>
+<dd><p>Adiciona um novo leitor ao banco de dados.</p>
+<p>Solicita ao usuário o nome e o contato do leitor e insere os dados
+na tabela <cite>leitores</cite> do banco de dados.</p>
+<dl class="simple">
+<dt>Inputs solicitados:</dt><dd><ul class="simple">
+<li><p>Nome (str): Nome do leitor.</p></li>
+<li><p>Contato (str): E-mail ou telefone do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>Nome: João Silva
+Contato: <a class="reference external" href="mailto:joao&#46;silva&#37;&#52;&#48;email&#46;com">joao<span>&#46;</span>silva<span>&#64;</span>email<span>&#46;</span>com</a>
+Leitor adicionado com sucesso!</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="leitores.atualizar_leitor">
+<span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">atualizar_leitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#atualizar_leitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.atualizar_leitor" title="Link to this definition">¶</a></dt>
+<dd><p>Atualiza as informações de um leitor no banco de dados.</p>
+<p>Solicita ao usuário o ID do leitor, o novo nome e o novo contato, 
+e atualiza as informações na tabela <cite>leitores</cite>.</p>
+<dl class="simple">
+<dt>Inputs solicitados:</dt><dd><ul class="simple">
+<li><p>ID do leitor (int): Identificador único do leitor.</p></li>
+<li><p>Novo nome (str): Nome atualizado do leitor.</p></li>
+<li><p>Novo contato (str): Contato atualizado do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID do leitor a ser atualizado: 1
+Novo nome: João Pedro Silva
+Novo contato: <a class="reference external" href="mailto:joao&#46;pedro&#37;&#52;&#48;email&#46;com">joao<span>&#46;</span>pedro<span>&#64;</span>email<span>&#46;</span>com</a>
+Leitor atualizado com sucesso!</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="leitores.excluir_leitor">
+<span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">excluir_leitor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#excluir_leitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.excluir_leitor" title="Link to this definition">¶</a></dt>
+<dd><p>Exclui um leitor do banco de dados.</p>
+<p>Solicita ao usuário o ID do leitor e remove o respectivo registro 
+da tabela <cite>leitores</cite>.</p>
+<dl class="simple">
+<dt>Inputs solicitados:</dt><dd><ul class="simple">
+<li><p>ID do leitor (int): Identificador único do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou interagir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID do leitor a ser excluído: 1
+Leitor excluído com sucesso!</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="leitores.listar_leitores">
+<span class="sig-prename descclassname"><span class="pre">leitores.</span></span><span class="sig-name descname"><span class="pre">listar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leitores.html#listar_leitores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#leitores.listar_leitores" title="Link to this definition">¶</a></dt>
+<dd><p>Lista todos os leitores cadastrados no banco de dados.</p>
+<dl class="simple">
+<dt>Recupera os registros da tabela <cite>leitores</cite> e os exibe ao usuário no formato:</dt><dd><ul class="simple">
+<li><p>ID: ID do leitor.</p></li>
+<li><p>Nome: Nome do leitor.</p></li>
+<li><p>Contato: Contato do leitor.</p></li>
+</ul>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: Se ocorrer algum erro ao se conectar ou inragir com o banco de dados.</p>
+</dd>
+<dt>Example:</dt><dd><p>ID: 1, Nome: João Silva, Contato: <a class="reference external" href="mailto:joao&#46;silva&#37;&#52;&#48;email&#46;com">joao<span>&#46;</span>silva<span>&#64;</span>email<span>&#46;</span>com</a>
+ID: 2, Nome: Maria Souza, Contato: <a class="reference external" href="mailto:maria&#46;souza&#37;&#52;&#48;email&#46;com">maria<span>&#46;</span>souza<span>&#64;</span>email<span>&#46;</span>com</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Author.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

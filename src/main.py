@@ -1,10 +1,26 @@
-from src import db_connection
-from src import livros
-from src import funcionarios
-from src import leitores
-from src import emprestimos
+import db_connection
+import leitores
+import funcionarios
+import livros
+import emprestimos
 
 def menu():
+    """
+    Exibe o menu principal do sistema de biblioteca e gerencia a navegação entre opções.
+
+    As opções incluem o gerenciamento de livros, funcionários, leitores e empréstimos.
+    Permite ao usuário sair do programa.
+
+    Menu:
+        1. Gerenciar Livros
+        2. Gerenciar Funcionários
+        3. Gerenciar Leitores
+        4. Gerenciar Empréstimos
+        5. Sair
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n=== Sistema de Biblioteca ===")
         print("1. Gerenciar Livros")
@@ -30,6 +46,21 @@ def menu():
             print("Opção inválida.")
 
 def gerenciar_leitores():
+    """
+    Exibe o submenu para gerenciamento de leitores.
+
+    Permite adicionar, listar, atualizar ou excluir leitores, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Leitor
+        2. Listar Leitores
+        3. Atualizar Leitor
+        4. Excluir Leitor
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Leitores ---")
         print("1. Adicionar Leitor")
@@ -43,7 +74,7 @@ def gerenciar_leitores():
         if opcao == "1":
             leitores.adicionar_leitor()
         elif opcao == "2":
-            leitores.listar_leitorer()
+            leitores.listar_leitores()
         elif opcao == "3":
             leitores.atualizar_leitor()
         elif opcao == "4":
@@ -53,7 +84,23 @@ def gerenciar_leitores():
         else:
             print("Opção inválida.")
 
+
 def gerenciar_livros():
+    """
+    Exibe o submenu para gerenciamento de livros.
+
+    Permite adicionar, listar, atualizar ou excluir livros, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Livro
+        2. Listar Livros
+        3. Atualizar Livro
+        4. Excluir Livro
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Livros ---")
         print("1. Adicionar Livro")
@@ -78,6 +125,21 @@ def gerenciar_livros():
             print("Opção inválida.")
 
 def gerenciar_funcionarios():
+    """
+    Exibe o submenu para gerenciamento de funcionários.
+
+    Permite adicionar, listar, atualizar ou excluir funcionários, além de retornar ao menu principal.
+
+    Submenu:
+        1. Adicionar Funcionário
+        2. Listar Funcionários
+        3. Atualizar Funcionário
+        4. Excluir Funcionário
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Funcionários ---")
         print("1. Adicionar Funcionário")
@@ -102,6 +164,21 @@ def gerenciar_funcionarios():
             print("Opção inválida.")
 
 def gerenciar_emprestimos():
+    """
+    Exibe o submenu para gerenciamento de empréstimos.
+
+    Permite registrar, listar, atualizar ou excluir empréstimos, além de retornar ao menu principal.
+
+    Submenu:
+        1. Registrar Empréstimo
+        2. Listar Empréstimos
+        3. Atualizar Empréstimo
+        4. Excluir Empréstimo
+        5. Voltar
+
+    Raises:
+        ValueError: Caso uma entrada inválida seja fornecida.
+    """
     while True:
         print("\n--- Gerenciar Empréstimos ---")
         print("1. Registrar Empréstimo")
@@ -126,5 +203,12 @@ def gerenciar_emprestimos():
             print("Opção inválida.")
 
 if __name__ == "__main__":
+    """
+    Inicializa o banco de dados e executa o menu principal.
+
+    Calls:
+        - db_connection.inicializar_bd: Inicializa as tabelas do banco de dados, se necessário.
+        - menu: Exibe o menu principal do sistema.
+    """
     db_connection.inicializar_bd()
     menu()
