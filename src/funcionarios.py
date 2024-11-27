@@ -30,6 +30,21 @@ def adicionar_funcionario():
     print("Funcionário adicionado com sucesso!")
 
 def listar_funcionarios():
+    """
+    Lista todos os funcionários cadastrados no banco de dados.
+
+    Recupera os registros da tabela `funcionarios` e os exibe ao usuário no formato:
+        - ID: Identificador único do funcionário.
+        - Nome: Nome do funcionário.
+        - Cargo: Cargo do funcionário.
+
+    Raises:
+        Exception: Caso ocorra algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        ID: 1, Nome: Ana Souza, Cargo: Gerente
+        ID: 2, Nome: Carlos Lima, Cargo: Assistente
+    """
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("SELECT * FROM funcionarios")
