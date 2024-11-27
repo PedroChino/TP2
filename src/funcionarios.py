@@ -58,11 +58,31 @@ def listar_funcionarios():
         print("Nenhum funcionário encontrado.")
 
 def atualizar_funcionario():
+    """
+    Atualiza as informações de um funcionário no banco de dados.
+
+    Solicita ao usuário o ID do funcionário, o novo nome e o novo cargo, 
+    e atualiza as informações na tabela `funcionarios`.
+
+    Inputs:
+        - ID do funcionário (int): Identificador único do funcionário.
+        - Novo nome (str): Nome atualizado do funcionário.
+        - Novo cargo (str): Cargo atualizado do funcionário.
+
+    Raises:
+        Exception: Caso ocorra algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        ID do funcionário a ser atualizado: 1
+        Novo nome: Ana Carolina Souza
+        Novo cargo: Diretora
+        Funcionário atualizado com sucesso!
+    """
     listar_funcionarios()
     funcionario_id = int(input("ID do funcionário a ser atualizado: "))
     novo_nome = input("Novo nome: ")
     novo_cargo = input("Novo cargo: ")
-    
+
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?", 
