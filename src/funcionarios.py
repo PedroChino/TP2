@@ -92,9 +92,25 @@ def atualizar_funcionario():
     print("Funcionário atualizado com sucesso!")
 
 def excluir_funcionario():
+    """
+    Exclui um funcionário do banco de dados.
+
+    Solicita ao usuário o ID do funcionário e remove o respectivo registro 
+    da tabela `funcionarios`.
+
+    Inputs:
+        - ID do funcionário (int): Identificador único do funcionário.
+
+    Raises:
+        Exception: Caso ocorra algum erro ao se conectar ou interagir com o banco de dados.
+
+    Example:
+        ID do funcionário a ser excluído: 2
+        Funcionário excluído com sucesso!
+    """
     listar_funcionarios()
     funcionario_id = int(input("ID do funcionário a ser excluído: "))
-    
+
     conexao = get_connection()
     cursor = conexao.cursor()
     cursor.execute("DELETE FROM funcionarios WHERE id = ?", (funcionario_id,))
