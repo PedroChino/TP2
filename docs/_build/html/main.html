@@ -32,8 +32,104 @@
 
           <div class="body" role="main">
             
-  <section id="main-module">
-<h1>main module<a class="headerlink" href="#main-module" title="Link to this heading">¶</a></h1>
+  <section id="module-main">
+<span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.gerenciar_emprestimos">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">gerenciar_emprestimos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#gerenciar_emprestimos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.gerenciar_emprestimos" title="Link to this definition">¶</a></dt>
+<dd><p>Exibe o submenu para gerenciamento de empréstimos.</p>
+<p>Permite registrar, listar, atualizar ou excluir empréstimos, além de retornar ao menu principal.</p>
+<dl class="simple">
+<dt>Submenu:</dt><dd><ol class="arabic simple">
+<li><p>Registrar Empréstimo</p></li>
+<li><p>Listar Empréstimos</p></li>
+<li><p>Atualizar Empréstimo</p></li>
+<li><p>Excluir Empréstimo</p></li>
+<li><p>Voltar</p></li>
+</ol>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Caso uma entrada inválida seja fornecida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.gerenciar_funcionarios">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">gerenciar_funcionarios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#gerenciar_funcionarios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.gerenciar_funcionarios" title="Link to this definition">¶</a></dt>
+<dd><p>Exibe o submenu para gerenciamento de funcionários.</p>
+<p>Permite adicionar, listar, atualizar ou excluir funcionários, além de retornar ao menu principal.</p>
+<dl class="simple">
+<dt>Submenu:</dt><dd><ol class="arabic simple">
+<li><p>Adicionar Funcionário</p></li>
+<li><p>Listar Funcionários</p></li>
+<li><p>Atualizar Funcionário</p></li>
+<li><p>Excluir Funcionário</p></li>
+<li><p>Voltar</p></li>
+</ol>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Caso uma entrada inválida seja fornecida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.gerenciar_leitores">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">gerenciar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#gerenciar_leitores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.gerenciar_leitores" title="Link to this definition">¶</a></dt>
+<dd><p>Exibe o submenu para gerenciamento de leitores.</p>
+<p>Permite adicionar, listar, atualizar ou excluir leitores, além de retornar ao menu principal.</p>
+<dl class="simple">
+<dt>Submenu:</dt><dd><ol class="arabic simple">
+<li><p>Adicionar Leitor</p></li>
+<li><p>Listar Leitores</p></li>
+<li><p>Atualizar Leitor</p></li>
+<li><p>Excluir Leitor</p></li>
+<li><p>Voltar</p></li>
+</ol>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Caso uma entrada inválida seja fornecida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.gerenciar_livros">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">gerenciar_livros</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#gerenciar_livros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.gerenciar_livros" title="Link to this definition">¶</a></dt>
+<dd><p>Exibe o submenu para gerenciamento de livros.</p>
+<p>Permite adicionar, listar, atualizar ou excluir livros, além de retornar ao menu principal.</p>
+<dl class="simple">
+<dt>Submenu:</dt><dd><ol class="arabic simple">
+<li><p>Adicionar Livro</p></li>
+<li><p>Listar Livros</p></li>
+<li><p>Atualizar Livro</p></li>
+<li><p>Excluir Livro</p></li>
+<li><p>Voltar</p></li>
+</ol>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Caso uma entrada inválida seja fornecida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.menu">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.menu" title="Link to this definition">¶</a></dt>
+<dd><p>Exibe o menu principal do sistema de biblioteca e gerencia a navegação entre opções.</p>
+<p>As opções incluem o gerenciamento de livros, funcionários, leitores e empréstimos.
+Permite ao usuário sair do programa.</p>
+<dl class="simple">
+<dt>Menu:</dt><dd><ol class="arabic simple">
+<li><p>Gerenciar Livros</p></li>
+<li><p>Gerenciar Funcionários</p></li>
+<li><p>Gerenciar Leitores</p></li>
+<li><p>Gerenciar Empréstimos</p></li>
+<li><p>Sair</p></li>
+</ol>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Caso uma entrada inválida seja fornecida.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -69,7 +165,14 @@
 <li class="toctree-l1"><a class="reference internal" href="funcionarios.html">funcionarios module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leitores.html">leitores module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="livros.html">livros module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">main module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">main module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main.gerenciar_emprestimos"><code class="docutils literal notranslate"><span class="pre">gerenciar_emprestimos()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main.gerenciar_funcionarios"><code class="docutils literal notranslate"><span class="pre">gerenciar_funcionarios()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main.gerenciar_leitores"><code class="docutils literal notranslate"><span class="pre">gerenciar_leitores()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main.gerenciar_livros"><code class="docutils literal notranslate"><span class="pre">gerenciar_livros()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main.menu"><code class="docutils literal notranslate"><span class="pre">menu()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
