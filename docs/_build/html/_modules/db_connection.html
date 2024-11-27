@@ -38,6 +38,15 @@
 <span class="k">def</span> <span class="nf">get_connection</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Retorna uma conexão com o banco de dados SQLite.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Cria ou abre um arquivo de banco de dados SQLite chamado &#39;biblioteca.db&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    Saída:</span>
+<span class="sd">        - Objeto de conexão SQLite para interação com o banco de dados.</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso o arquivo do banco de dados não possa ser criado ou acessado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;biblioteca.db&#39;</span><span class="p">)</span></div>
 
@@ -47,6 +56,50 @@
 <span class="k">def</span> <span class="nf">inicializar_bd</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Inicializa o banco de dados criando todas as tabelas necessárias.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Verifica a existência das tabelas: &#39;livros&#39;, &#39;funcionarios&#39;, &#39;leitores&#39; e &#39;emprestimos&#39;.</span>
+<span class="sd">        - Cria as tabelas caso ainda não existam no banco de dados.</span>
+
+<span class="sd">    Processo:</span>
+<span class="sd">        - Estabelece conexão com o banco de dados usando `get_connection`.</span>
+<span class="sd">        - Executa comandos SQL `CREATE TABLE IF NOT EXISTS` para cada tabela:</span>
+<span class="sd">            - `livros`: Armazena informações sobre os livros cadastrados.</span>
+<span class="sd">            - `funcionarios`: Armazena dados sobre os funcionários da biblioteca.</span>
+<span class="sd">            - `leitores`: Registra informações sobre os leitores.</span>
+<span class="sd">            - `emprestimos`: Registra os empréstimos de livros pelos leitores.</span>
+
+<span class="sd">    Estrutura das Tabelas:</span>
+<span class="sd">        1. **Tabela: livros**</span>
+<span class="sd">            - `id` (INTEGER PRIMARY KEY AUTOINCREMENT): Identificador único do livro.</span>
+<span class="sd">            - `titulo` (TEXT NOT NULL): Título do livro.</span>
+<span class="sd">            - `autor` (TEXT NOT NULL): Nome do autor do livro.</span>
+<span class="sd">            - `ano` (INTEGER NOT NULL): Ano de publicação.</span>
+
+<span class="sd">        2. **Tabela: funcionarios**</span>
+<span class="sd">            - `id` (INTEGER PRIMARY KEY AUTOINCREMENT): Identificador único do funcionário.</span>
+<span class="sd">            - `nome` (TEXT NOT NULL): Nome do funcionário.</span>
+<span class="sd">            - `cargo` (TEXT NOT NULL): Cargo ocupado pelo funcionário.</span>
+
+<span class="sd">        3. **Tabela: leitores**</span>
+<span class="sd">            - `id` (INTEGER PRIMARY KEY AUTOINCREMENT): Identificador único do leitor.</span>
+<span class="sd">            - `nome` (TEXT NOT NULL): Nome do leitor.</span>
+<span class="sd">            - `contato` (TEXT NOT NULL): Informações de contato do leitor.</span>
+
+<span class="sd">        4. **Tabela: emprestimos**</span>
+<span class="sd">            - `id` (INTEGER PRIMARY KEY AUTOINCREMENT): Identificador único do empréstimo.</span>
+<span class="sd">            - `livro_id` (INTEGER NOT NULL): ID do livro emprestado (relacionado à tabela `livros`).</span>
+<span class="sd">            - `leitor_id` (INTEGER NOT NULL): ID do leitor que pegou o empréstimo (relacionado à tabela `leitores`).</span>
+<span class="sd">            - `data_emprestimo` (TEXT NOT NULL): Data em que o empréstimo foi realizado.</span>
+<span class="sd">            - `data_devolucao` (TEXT): Data em que o livro foi devolvido.</span>
+<span class="sd">            - `FOREIGN KEY (livro_id)`: Referência à coluna `id` na tabela `livros`.</span>
+<span class="sd">            - `FOREIGN KEY (leitor_id)`: Referência à coluna `id` na tabela `leitores`.</span>
+
+<span class="sd">    Saída:</span>
+<span class="sd">        - Cria ou mantém o banco de dados em um estado inicializado com as tabelas necessárias.</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso não consiga criar ou acessar as tabelas no banco de dados.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>

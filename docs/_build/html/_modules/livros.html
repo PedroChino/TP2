@@ -36,6 +36,30 @@
 <div class="viewcode-block" id="adicionar_livro">
 <a class="viewcode-back" href="../livros.html#livros.adicionar_livro">[docs]</a>
 <span class="k">def</span> <span class="nf">adicionar_livro</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adiciona um novo livro ao banco de dados.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Solicita ao usuário informações do livro (Título, Autor, Ano).</span>
+<span class="sd">        - Insere os dados no banco de dados.</span>
+
+<span class="sd">    Entrada:</span>
+<span class="sd">        - Título: Nome do livro (string).</span>
+<span class="sd">        - Autor: Nome do autor do livro (string).</span>
+<span class="sd">        - Ano: Ano de publicação do livro (inteiro).</span>
+
+<span class="sd">    Processo:</span>
+<span class="sd">        - Estabelece conexão com o banco de dados.</span>
+<span class="sd">        - Executa a query SQL `INSERT` para adicionar os dados.</span>
+<span class="sd">        - Fecha a conexão com o banco de dados.</span>
+
+<span class="sd">    Saída:</span>
+<span class="sd">        - Mensagem de confirmação: &quot;Livro adicionado com sucesso!&quot;</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso não consiga se conectar ao banco de dados.</span>
+<span class="sd">        - Gera erro caso as entradas sejam inválidas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">titulo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Título: &quot;</span><span class="p">)</span>
     <span class="n">autor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Autor: &quot;</span><span class="p">)</span>
     <span class="n">ano</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ano: &quot;</span><span class="p">))</span>
@@ -51,6 +75,30 @@
 <div class="viewcode-block" id="listar_livros">
 <a class="viewcode-back" href="../livros.html#livros.listar_livros">[docs]</a>
 <span class="k">def</span> <span class="nf">listar_livros</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lista todos os livros cadastrados no banco de dados.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Conecta ao banco de dados.</span>
+<span class="sd">        - Recupera todos os registros da tabela `livros`.</span>
+
+<span class="sd">    Processo:</span>
+<span class="sd">        - Executa a query SQL `SELECT * FROM livros`.</span>
+<span class="sd">        - Itera pelos resultados e exibe os detalhes de cada livro:</span>
+<span class="sd">            - ID</span>
+<span class="sd">            - Título</span>
+<span class="sd">            - Autor</span>
+<span class="sd">            - Ano</span>
+<span class="sd">        - Fecha a conexão com o banco de dados.</span>
+
+<span class="sd">    Saída:</span>
+<span class="sd">        - Lista de livros formatada.</span>
+<span class="sd">        - Mensagem &quot;Nenhum livro encontrado.&quot; caso não existam registros.</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso não consiga se conectar ao banco de dados.</span>
+<span class="sd">        - Gera erro caso a tabela `livros` não exista ou esteja vazia.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">conexao</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexao</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
     <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM livros&quot;</span><span class="p">)</span>
@@ -67,6 +115,32 @@
 <div class="viewcode-block" id="atualizar_livro">
 <a class="viewcode-back" href="../livros.html#livros.atualizar_livro">[docs]</a>
 <span class="k">def</span> <span class="nf">atualizar_livro</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Atualiza as informações de um livro existente no banco de dados.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Solicita ao usuário o ID do livro a ser atualizado.</span>
+<span class="sd">        - Permite modificar Título, Autor e Ano do livro.</span>
+
+<span class="sd">    Entrada:</span>
+<span class="sd">        - ID do Livro: Identificador único do livro (inteiro).</span>
+<span class="sd">        - Novo Título: Novo nome do livro (string).</span>
+<span class="sd">        - Novo Autor: Novo nome do autor (string).</span>
+<span class="sd">        - Novo Ano: Novo ano de publicação (inteiro).</span>
+
+<span class="sd">    Processo:</span>
+<span class="sd">        - Lista todos os livros para referência.</span>
+<span class="sd">        - Solicita os novos dados.</span>
+<span class="sd">        - Executa a query SQL `UPDATE` para modificar os registros.</span>
+<span class="sd">        - Fecha a conexão com o banco de dados.</span>
+
+<span class="sd">    Saída:</span>
+<span class="sd">        - Mensagem de confirmação: &quot;Livro atualizado com sucesso!&quot;</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso o ID não exista no banco de dados.</span>
+<span class="sd">        - Gera erro caso a tabela `livros` não contenha o registro solicitado.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">listar_livros</span><span class="p">()</span>
     <span class="n">livro_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do livro a ser atualizado: &quot;</span><span class="p">))</span>
     <span class="n">novo_titulo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo título: &quot;</span><span class="p">)</span>
@@ -85,6 +159,29 @@
 <div class="viewcode-block" id="excluir_livro">
 <a class="viewcode-back" href="../livros.html#livros.excluir_livro">[docs]</a>
 <span class="k">def</span> <span class="nf">excluir_livro</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exclui um livro do banco de dados com base no ID fornecido.</span>
+
+<span class="sd">    Funcionalidade:</span>
+<span class="sd">        - Solicita ao usuário o ID do livro que deseja excluir.</span>
+<span class="sd">        - Remove o registro correspondente da tabela `livros`.</span>
+
+<span class="sd">    Entrada:</span>
+<span class="sd">        - ID do Livro: Identificador único do livro (inteiro).</span>
+
+<span class="sd">    Processo:</span>
+<span class="sd">        - Lista todos os livros para referência.</span>
+<span class="sd">        - Solicita o ID do livro a ser excluído.</span>
+<span class="sd">        - Executa a query SQL `DELETE` para remover o registro.</span>
+<span class="sd">        - Fecha a conexão com o banco de dados.</span>
+
+<span class="sd">    Saída:</span>
+<span class="sd">        - Mensagem de confirmação: &quot;Livro excluído com sucesso!&quot;</span>
+
+<span class="sd">    Exceções:</span>
+<span class="sd">        - Gera erro caso o ID fornecido não exista no banco de dados.</span>
+<span class="sd">        - Gera erro caso a tabela `livros` esteja vazia ou não exista.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">listar_livros</span><span class="p">()</span>
     <span class="n">livro_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID do livro a ser excluído: &quot;</span><span class="p">))</span>
     
